@@ -171,3 +171,7 @@ Separate logs for each edit.
 DJai merges creativity, speed, and decentralization to create the world’s first live AI music editing tool that runs completely on-chain. No pause. No friction. Just sound — shaped by your words.
 
 > Let’s turn every block into music.
+
+## 9. Resources
+
+https://www.canva.com/design/DAGrDk94_yE/jMndPiaG55JCZpWNUv35Tw/edit?utm_content=DAGrDk94_yE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
