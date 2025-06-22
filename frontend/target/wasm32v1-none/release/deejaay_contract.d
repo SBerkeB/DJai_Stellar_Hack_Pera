@@ -1,0 +1,1 @@
+/Users/comradekedi/Desktop/GCF/Pera/frontend/target/wasm32v1-none/release/deejaay_contract.wasm: /Users/comradekedi/Desktop/GCF/Pera/frontend/contracts/hello-world/src/lib.rs /Users/comradekedi/Desktop/GCF/Pera/frontend/contracts/hello-world/src/test.rs /Users/comradekedi/Desktop/GCF/Pera/frontend/contracts/hello-world/src/types.rs
