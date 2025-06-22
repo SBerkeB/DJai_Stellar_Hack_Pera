@@ -28,7 +28,7 @@ import { ChatGuideModal } from "@/components/chat/chat-guide";
 import type { Message } from "@/types";
 import { WeightedPrompts } from "@/types";
 import { set } from "zod";
-import { makePayment } from "@/utils/make-payment";
+// import { makePayment } from "@/utils/make-payment";
 
 export default function ChatPage() {
   const { connections, disconnect } = useApp();
@@ -41,15 +41,8 @@ export default function ChatPage() {
   const [showGuide, setShowGuide] = useState(true);
   const [chatStarted, setChatStarted] = useState(false);
 
-<<<<<<< Updated upstream
-  const SOCKET_URL =
-    process.env.NEXT_PUBLIC_SOCKET_URL || "ws://localhost:5050/lyria_stream";
-  const CHAT_URL =
-    process.env.NEXT_PUBLIC_CHAT_URL || "http://localhost:5050/send_message";
-=======
   const SOCKET_URL = process.env.NEXT_PUBLIC_SOCKET_URL || "ws://localhost:5050";
   const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || "http://localhost:5050";
->>>>>>> Stashed changes
 
   // const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)(
   //   {sampleRate: 48000},
@@ -61,18 +54,13 @@ export default function ChatPage() {
 
   useEffect(() => {
     // Only create the connection if it doesn't exist
-<<<<<<< Updated upstream
     if (!musicWSRef.current && chatStarted) {
-=======
-    if (!musicWSRef.current) {
->>>>>>> Stashed changes
       musicWSRef.current = new WebSocket(SOCKET_URL + "/lyria_stream");
 
       musicWSRef.current.onmessage = (event: any) => {
         // TBD: type this properly
         const data = JSON.parse(event.data);
         if (data.chatIntro) {
-<<<<<<< Updated upstream
           setMessages([
             {
               id: Date.now().toString(),
@@ -81,14 +69,6 @@ export default function ChatPage() {
               timestamp: new Date(),
             },
           ]);
-=======
-          setMessages([{
-            id: Date.now().toString(),
-            role: "assistant",
-            content: data.chatIntro,
-            timestamp: new Date(),
-          }]);
->>>>>>> Stashed changes
           console.log("Intro message received:", data.introMessage);
         }
         if (data.connectionId) {
@@ -140,31 +120,26 @@ export default function ChatPage() {
 
     setMessages((prev) => [...prev, userMessage]);
     console.log("Sending user message:", userMessage);
-    try {
-      const paymentResult = await makePayment();
-      if (!paymentResult?.success) {
-        // Optional: show error in UI
-        console.error("Payment failed or not confirmed:", paymentResult);
-        setMessages((prev) => [
-          ...prev,
-          {
-            id: Date.now().toString(),
-            role: "assistant",
-            content: "⚠️ Payment failed. Please try again.",
-            timestamp: new Date(),
-          },
-        ]);
-        return;
-      }
-    } catch (err) {
-      console.error("Error making payment:", err);
-    }
+    // try {
+    //   const paymentResult = await makePayment();
+    //   // if (!paymentResult?.success) {
+    //     // Optional: show error in UI
+    //     console.error("Payment failed or not confirmed:", paymentResult);
+    //     setMessages((prev) => [
+    //       ...prev,
+    //       {
+    //         id: Date.now().toString(),
+    //         role: "assistant",
+    //         content: "⚠️ Payment failed. Please try again.",
+    //         timestamp: new Date(),
+    //       },
+    //     ]);
+    //     return;
+    //   // }
+    // } catch (err) {
+    //   console.error("Error making payment:", err);
+    // }
 
-<<<<<<< Updated upstream
-=======
-    setMessages((prev) => [...prev, userMessage])
-
->>>>>>> Stashed changes
     await fetch(CHAT_URL + "/send_message", {
       method: "POST",
       headers: {
@@ -291,11 +266,6 @@ export default function ChatPage() {
               disabled={messages.length == 0 ? true : false}
             />
           </div>
-<<<<<<< Updated upstream
-=======
-          {/* TBD */}
-          <ChatInput onSendMessage={handleSendMessage} disabled={messages.length == 0 ? true : false} />
->>>>>>> Stashed changes
         </div>
       </SidebarProvider>
     </>

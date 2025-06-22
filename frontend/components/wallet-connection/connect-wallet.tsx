@@ -139,7 +139,7 @@ export function ConnectWallet() {
                   <User className="absolute left-3 top-3 h-5 w-5 text-gray-400 group-focus-within:text-white transition-colors duration-200" />
                   <Input
                     type="text"
-                    placeholder="Enter your name to join"
+                    placeholder="Enter your Google Labs API Key!"
                     value={displayName}
                     onChange={(e) => setDisplayName(e.target.value)}
                     className="pl-12 h-12 bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 text-lg focus:border-white focus:ring-white focus:bg-gray-800 transition-all duration-200"
@@ -184,6 +184,7 @@ export function ConnectWallet() {
               type="submit"
               className="w-full h-12 bg-white text-black hover:bg-gray-200 text-lg font-medium transition-all duration-200 hover:scale-105 active:scale-95"
               disabled={!walletAddress && (!acceptTerms || !displayName)}
+              
             >
               {walletAddress ? "Let's try DJai" : "Launch App"}
             </Button>
