@@ -175,3 +175,11 @@ DJai merges creativity, speed, and decentralization to create the world’s firs
 ## 9. Resources
 
 https://www.canva.com/design/DAGrDk94_yE/jMndPiaG55JCZpWNUv35Tw/edit?utm_content=DAGrDk94_yE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+### Developed and Maintained By
+- **Sami Berke Babaoğlu** ([->GitHub<-](https://github.com/SBerkeB))
+- **Ada Yıldız** ([->GitHub<-](https://github.com/adayildizz))
+
+### Major Contributors 💐
+- Ali Caner Dere ([->📫<-](mailto:alicaner.dere@outlook.com))
+- Dilara Saraçoğlu ([->📫<-](mailto:dlrsaracoglu1@gmail.com))
